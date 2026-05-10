@@ -58,6 +58,8 @@
       <DependentUpon>ModConfigGen.tt</DependentUpon>
     </Compile>
     <Compile Include="Entry.cs" />
+    <Compile Include="Patches\LongMelee.cs" />
+    <Compile Include="Patches\NoMosaic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

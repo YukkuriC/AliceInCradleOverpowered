@@ -19,10 +19,16 @@ namespace AliceInCradleOverpowered
 <#
     foreach (var typeGroup in configItems.GroupBy(item => item.type))
     {
-        string fieldNames = string.Join(", ", typeGroup.Select(item => item.name));
+        var fieldList = typeGroup.Select(item => item.name).ToList();
 #>
-        public static ConfigEntry<<#= typeGroup.Key #>> <#= fieldNames #>;
+        public static ConfigEntry<<#= typeGroup.Key #>>
 <#
+        for (int i = 0; i < fieldList.Count; i++)
+        {
+#>
+            <#= fieldList[i] #><#= i == fieldList.Count - 1 ? ";" : "," #>
+<#
+        }
     }
 #>
 
@@ -31,6 +37,9 @@ namespace AliceInCradleOverpowered
 <#
     foreach (var group in configItems.GroupBy(item => item.category))
     {
+#>
+            // <#= group.Key #>
+<#
         foreach (var item in group)
         {
 #>

@@ -13,3 +13,8 @@
   default: true
   category: Combat
   descrip: Throwables won't be consumed on use
+- name: NoMosaic
+  type: bool
+  default: true
+  category: Display
+  descrip: Disable dynamic mosaic
