@@ -1,0 +1,15 @@
+- name: MeleeRangeRatio
+  type: float
+  default: 1f
+  category: Combat
+  descrip: Melee attack horizontal ranges will be multiplied by this value
+- name: PermanentFood
+  type: bool
+  default: true
+  category: Combat
+  descrip: Food won't be consumed on use
+- name: PermanentThrowable
+  type: bool
+  default: true
+  category: Combat
+  descrip: Throwables won't be consumed on use

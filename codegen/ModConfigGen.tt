@@ -1,0 +1,54 @@
+<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(SolutionDir)packages\YamlDotNet.17.1.0\lib\net47\YamlDotNet.dll" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="YamlDotNet.Serialization" #>
+<#@ import namespace="System.Linq" #>
+<#@ output extension=".cs" #>
+<#
+    var yamlContent = File.ReadAllText(Path.Combine(Host.ResolvePath("."), "config.yaml"));
+    var configItems = new DeserializerBuilder().Build().Deserialize<List<ConfigItem>>(yamlContent);
+#>
+using BepInEx.Configuration;
+
+namespace AliceInCradleOverpowered
+{
+    public static partial class ModConfig
+    {
+<#
+    foreach (var typeGroup in configItems.GroupBy(item => item.type))
+    {
+        string fieldNames = string.Join(", ", typeGroup.Select(item => item.name));
+#>
+        public static ConfigEntry<<#= typeGroup.Key #>> <#= fieldNames #>;
+<#
+    }
+#>
+
+        public static void Init(ConfigFile config)
+        {
+<#
+    foreach (var group in configItems.GroupBy(item => item.category))
+    {
+        foreach (var item in group)
+        {
+#>
+            <#= item.name #> = config.Bind("<#= item.category #>", "<#= item.name #>", <#= item.@default #>, "<#= item.descrip #>");
+<#
+        }
+    }
+#>
+        }
+    }
+}
+<#+
+    public class ConfigItem
+    {
+        public string name { get; set; }
+        public string type { get; set; }
+        public object @default { get; set; }
+        public string category { get; set; }
+        public string descrip { get; set; }
+    }
+#>
