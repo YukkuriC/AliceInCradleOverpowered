@@ -3,7 +3,7 @@
   default: 1f
   category: Combat
   descrip: Melee attack horizontal ranges will be multiplied by this value
-- name: PermanentFood
+- name: NoConsumeFood
   type: bool
   default: true
   category: Combat
