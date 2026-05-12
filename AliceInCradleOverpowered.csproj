@@ -41,6 +41,9 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -71,4 +74,7 @@
     <None Include="codegen\config.yaml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(ProjectDir)postBuild.bat" "$(OutputPath)$(TargetName)$(TargetExt)" "$(GamePath)\BepInEx\plugins\"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
