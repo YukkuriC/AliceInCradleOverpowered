@@ -20,11 +20,5 @@ namespace AliceInCradleOverpowered.Patches
         {
             return generalCanceller(ref __result, false);
         }
-
-        [HarmonyPatch(typeof(NelItemManager), "createWlinkPack", typeof(ItemStorage), typeof(ItemStorage.IRow), typeof(int), typeof(ItemStorage), typeof(ItemStorage.IRow), typeof(int))]
-        public static bool NoComsumeInBox(ref string __result)
-        {
-            return generalCanceller(ref __result, null);
-        }
     }
 }
