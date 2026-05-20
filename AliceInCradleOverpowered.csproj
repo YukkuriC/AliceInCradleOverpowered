@@ -61,6 +61,7 @@
       <DependentUpon>ModConfigGen.tt</DependentUpon>
     </Compile>
     <Compile Include="Entry.cs" />
+    <Compile Include="Patches\SuperWaterShard.cs" />
     <Compile Include="Patches\LongMelee.cs" />
     <Compile Include="Patches\NoMosaic.cs" />
     <Compile Include="Patches\PermanentFood.cs" />

@@ -3,15 +3,25 @@
   default: 1f
   category: Combat
   descrip: Melee attack horizontal ranges will be multiplied by this value
-- name: NoConsumeFood
+- name: WaterShardShield
   type: bool
   default: true
   category: Combat
+  descrip: Auto supply water shards during combat
+- name: WaterShardExplosive
+  type: bool
+  default: true
+  category: Combat
+  descrip: Water shards explode like fireballs on hit
+- name: NoConsumeFood
+  type: bool
+  default: true
+  category: Item
   descrip: Food won't be consumed on use
 - name: PermanentThrowable
   type: bool
   default: true
-  category: Combat
+  category: Item
   descrip: Throwables won't be consumed on use
 - name: NoMosaic
   type: bool

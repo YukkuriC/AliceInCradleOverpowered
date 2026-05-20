@@ -1,4 +1,4 @@
-using BepInEx.Configuration;
+﻿using BepInEx.Configuration;
 
 namespace AliceInCradleOverpowered
 {
@@ -7,6 +7,8 @@ namespace AliceInCradleOverpowered
         public static ConfigEntry<float>
             MeleeRangeRatio;
         public static ConfigEntry<bool>
+            WaterShardShield,
+            WaterShardExplosive,
             NoConsumeFood,
             PermanentThrowable,
             NoMosaic;
@@ -15,8 +17,11 @@ namespace AliceInCradleOverpowered
         {
             // Combat
             MeleeRangeRatio = config.Bind("Combat", "MeleeRangeRatio", 1f, "Melee attack horizontal ranges will be multiplied by this value");
-            NoConsumeFood = config.Bind("Combat", "NoConsumeFood", true, "Food won't be consumed on use");
-            PermanentThrowable = config.Bind("Combat", "PermanentThrowable", true, "Throwables won't be consumed on use");
+            WaterShardShield = config.Bind("Combat", "WaterShardShield", true, "Auto supply water shards during combat");
+            WaterShardExplosive = config.Bind("Combat", "WaterShardExplosive", true, "Water shards explode like fireballs on hit");
+            // Item
+            NoConsumeFood = config.Bind("Item", "NoConsumeFood", true, "Food won't be consumed on use");
+            PermanentThrowable = config.Bind("Item", "PermanentThrowable", true, "Throwables won't be consumed on use");
             // Display
             NoMosaic = config.Bind("Display", "NoMosaic", true, "Disable dynamic mosaic");
         }
