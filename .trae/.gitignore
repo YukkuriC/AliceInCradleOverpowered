@@ -1,0 +1,5 @@
+**
+!.gitignore
+!rules/
+rules/*
+!rules/readme_rules.md
