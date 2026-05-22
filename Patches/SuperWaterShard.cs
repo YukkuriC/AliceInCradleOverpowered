@@ -85,7 +85,13 @@ namespace AliceInCradleOverpowered.Patches
             fireball.sx = Mg.sx;
             fireball.sy = Mg.sy;
             fireball.sa = Mg.sa;
+            fireball.da = Mg.sa;
+            fireball.dx = Mg.dx;
+            fireball.dy = Mg.dy;
             fireball.run(1f);
+            fireball.Mn._0.aim_fixed = true;
+            fireball.Mn._0.fnManipulateMagic = null;
+            fireball.reduce_mp = 0;
         }
     }
 }
