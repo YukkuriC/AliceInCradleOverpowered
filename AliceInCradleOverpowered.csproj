@@ -25,6 +25,10 @@
     <Reference Include="$(BepPath)\BepInEx*.dll">
       <Private>False</Private>
     </Reference>
+    <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -61,10 +65,12 @@
       <DependentUpon>ModConfigGen.tt</DependentUpon>
     </Compile>
     <Compile Include="Entry.cs" />
+    <Compile Include="Patches\ReelTweaks.cs" />
     <Compile Include="Patches\SuperWaterShard.cs" />
     <Compile Include="Patches\LongMelee.cs" />
     <Compile Include="Patches\NoMosaic.cs" />
     <Compile Include="Patches\PermanentFood.cs" />
+    <Compile Include="Patches\PermanentConsumable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -78,4 +84,8 @@
   <PropertyGroup>
     <PostBuildEvent>"$(ProjectDir)postBuild.bat" "$(OutputPath)$(TargetName)$(TargetExt)" "$(GamePath)\BepInEx\plugins\"</PostBuildEvent>
   </PropertyGroup>
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp:nel.ReelExecuter.Acontent" />
+    <Publicize Include="Assembly-CSharp:nel.ReelExecuter.etype" />
+  </ItemGroup>
 </Project>

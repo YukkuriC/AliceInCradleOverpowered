@@ -23,6 +23,11 @@
   default: true
   category: Item
   descrip: Throwables won't be consumed on use
+- name: SortedReelContent
+  type: bool
+  default: true
+  category: Item/Reel
+  descrip: Force-sort reel content by effect type + intensity (weak→strong)
 - name: NoMosaic
   type: bool
   default: true

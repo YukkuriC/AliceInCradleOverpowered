@@ -11,6 +11,7 @@ namespace AliceInCradleOverpowered
             WaterShardExplosive,
             NoConsumeFood,
             PermanentThrowable,
+            SortedReelContent,
             NoMosaic;
 
         public static void Init(ConfigFile config)
@@ -22,6 +23,8 @@ namespace AliceInCradleOverpowered
             // Item
             NoConsumeFood = config.Bind("Item", "NoConsumeFood", true, "Food won't be consumed on use");
             PermanentThrowable = config.Bind("Item", "PermanentThrowable", true, "Throwables won't be consumed on use");
+            // Item/Reel
+            SortedReelContent = config.Bind("Item/Reel", "SortedReelContent", true, "Force-sort reel content by effect type + intensity (weak→strong)");
             // Display
             NoMosaic = config.Bind("Display", "NoMosaic", true, "Disable dynamic mosaic");
         }
