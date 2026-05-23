@@ -27,8 +27,13 @@
   type: bool
   default: true
   category: Item/Reel
-  descrip: Force-sort reel content by effect type + intensity (weak→strong)
+  descrip: Force-sort reel content by effect type + intensity (weak -> strong)
 - name: NoMosaic
+  type: bool
+  default: true
+  category: Display
+  descrip: Disable dynamic mosaic
+- name: SuppressErrorLog
   type: bool
   default: true
   category: Display

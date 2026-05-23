@@ -19,6 +19,7 @@ An overpowered mod for AliceInCradle game.
 - Auto water shard shield during combat & explosive shards on hit
 - Sort reel content by effect intensity
 - Disable dynamic mosaic
+- Suppress startup error log detection
 
 ## Deployment
 

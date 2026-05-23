@@ -71,6 +71,7 @@
     <Compile Include="Patches\NoMosaic.cs" />
     <Compile Include="Patches\PermanentFood.cs" />
     <Compile Include="Patches\PermanentConsumable.cs" />
+    <Compile Include="Patches\SuppressErrorReporter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
