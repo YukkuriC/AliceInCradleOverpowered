@@ -7,6 +7,7 @@
     <BepPath>$(GamePath)\BepInEx\core</BepPath>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <LangVersion>latest</LangVersion>
     <ProjectGuid>{0A9989FE-FF62-0932-F678-2E20A7EA0D4D}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
