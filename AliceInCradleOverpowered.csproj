@@ -16,6 +16,12 @@
     <Reference Include="$(DllPath)\unsafeAssem.dll">
       <Private>False</Private>
     </Reference>
+    <Reference Include="$(DllPath)\better.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="$(DllPath)\pixelliner.dll">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="$(DllPath)\UnityEngine*">
       <Private>False</Private>
     </Reference>
@@ -72,6 +78,7 @@
     <Compile Include="Patches\PermanentFood.cs" />
     <Compile Include="Patches\PermanentConsumable.cs" />
     <Compile Include="Patches\SuppressErrorReporter.cs" />
+    <Compile Include="Patches\MorePlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,5 +95,9 @@
   <ItemGroup>
     <Publicize Include="Assembly-CSharp:nel.ReelExecuter.Acontent" />
     <Publicize Include="Assembly-CSharp:nel.ReelExecuter.etype" />
+    <Publicize Include="Assembly-CSharp:nel.ENHA.SlotDr" />
+    <Publicize Include="Assembly-CSharp:nel.ENHA.max_slot" />
+    <Publicize Include="Assembly-CSharp:nel.ENHA.using_slot" />
+    <Publicize Include="Assembly-CSharp:nel.ENHA.enhancer_bits" />
   </ItemGroup>
 </Project>
