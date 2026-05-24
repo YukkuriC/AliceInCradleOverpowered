@@ -91,7 +91,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(ProjectDir)postBuild.bat" "$(OutputPath)$(TargetName)$(TargetExt)" "$(GamePath)\BepInEx\plugins\"</PostBuildEvent>
+    <PostBuildEvent>"$(ProjectDir)postBuild.bat" "$(OutputPath)*.dll" "$(GamePath)\BepInEx\plugins\"</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Publicize Include="Assembly-CSharp:nel.ReelExecuter.Acontent" />

@@ -1,11 +1,5 @@
 using BepInEx;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace AliceInCradleOverpowered
 {
@@ -26,11 +20,12 @@ namespace AliceInCradleOverpowered
 
         void Awake()
         {
-            patcher = new Harmony(UID);
-            patcher.PatchAll();
-
-            // configs
+            // configs MUST be initialized before PatchAll so Transpilers can read them
             ModConfig.Init(Config);
+
+            patcher = new Harmony(UID);
+            // HarmonyFileLog.Enabled = true;
+            patcher.PatchAll();
         }
     }
 }
