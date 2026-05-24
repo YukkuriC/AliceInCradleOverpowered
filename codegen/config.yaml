@@ -28,6 +28,16 @@
   default: true
   category: Item
   descrip: Throwables won't be consumed on use
+- name: MaxStackMult
+  type: int
+  default: 10
+  category: Item
+  descrip: Multiplier for all item max stack sizes in inventory
+- name: MaxTreasureRewards
+  type: int
+  default: 999
+  category: Item/Reel
+  descrip: Upper limit for treasure chest reward count (original game limit is 99)
 - name: SortedReelContent
   type: bool
   default: true

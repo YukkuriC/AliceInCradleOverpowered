@@ -16,6 +16,9 @@ namespace AliceInCradleOverpowered
             AutoBestReel,
             NoMosaic,
             SuppressErrorLog;
+        public static ConfigEntry<int>
+            MaxStackMult,
+            MaxTreasureRewards;
         public static ConfigEntry<CfgAutoLuckyBag>
             AutoBestReel_Lucky;
 
@@ -30,7 +33,9 @@ namespace AliceInCradleOverpowered
             // Item
             NoConsumeFood = config.Bind("Item", "NoConsumeFood", true, "Food won't be consumed on use");
             PermanentThrowable = config.Bind("Item", "PermanentThrowable", true, "Throwables won't be consumed on use");
+            MaxStackMult = config.Bind("Item", "MaxStackMult", 10, "Multiplier for all item max stack sizes in inventory");
             // Item/Reel
+            MaxTreasureRewards = config.Bind("Item/Reel", "MaxTreasureRewards", 999, "Upper limit for treasure chest reward count (original game limit is 99)");
             SortedReelContent = config.Bind("Item/Reel", "SortedReelContent", true, "Force-sort reel content by effect type + intensity (weak -> strong)");
             AutoBestReel = config.Bind("Item/Reel", "AutoBestReel", true, "Auto-select the strongest effect on bonus reel stop (excludes lucky bag/item reels)");
             AutoBestReel_Lucky = config.Bind("Item/Reel", "AutoBestReel_Lucky", CfgAutoLuckyBag.Mult, "Auto-select the best effect for lucky bag reels");

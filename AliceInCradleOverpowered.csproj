@@ -73,8 +73,10 @@
       <DependentUpon>ModConfigGen.tt</DependentUpon>
     </Compile>
     <Compile Include="Entry.cs" />
+    <Compile Include="Patches\MoreTreasureRewards.cs" />
     <Compile Include="Patches\ReelTweaks.cs" />
     <Compile Include="Patches\SuperWaterShard.cs" />
+    <Compile Include="Patches\InventoryTweaks.cs" />
     <Compile Include="Patches\LongMelee.cs" />
     <Compile Include="Patches\NoMosaic.cs" />
     <Compile Include="Patches\PermanentFood.cs" />
@@ -101,5 +103,10 @@
     <Publicize Include="Assembly-CSharp:nel.ENHA.max_slot" />
     <Publicize Include="Assembly-CSharp:nel.ENHA.using_slot" />
     <Publicize Include="Assembly-CSharp:nel.ENHA.enhancer_bits" />
+    <Publicize Include="Assembly-CSharp:nel.UiReelManager.rotate_decide_id" />
+    <Publicize Include="Assembly-CSharp:nel.UiReelManager.decide_delay" />
+    <Publicize Include="Assembly-CSharp:nel.UiReelManager.AReel" />
+    <Publicize Include="Assembly-CSharp:nel.UiReelManager.ReelIK" />
+    <Publicize Include="Assembly-CSharp:nel.UiReelManager.Snd" />
   </ItemGroup>
 </Project>
