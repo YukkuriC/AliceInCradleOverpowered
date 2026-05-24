@@ -33,6 +33,16 @@
   default: true
   category: Item/Reel
   descrip: Force-sort reel content by effect type + intensity (weak -> strong)
+- name: AutoBestReel
+  type: bool
+  default: true
+  category: Item/Reel
+  descrip: Auto-select the strongest effect on bonus reel stop (excludes lucky bag/item reels)
+- name: AutoBestReel_Lucky
+  type: CfgAutoLuckyBag
+  default: CfgAutoLuckyBag.Mult
+  category: Item/Reel
+  descrip: Auto-select the best effect for lucky bag reels
 - name: NoMosaic
   type: bool
   default: true

@@ -1,4 +1,4 @@
-using BepInEx.Configuration;
+﻿using BepInEx.Configuration;
 
 namespace AliceInCradleOverpowered
 {
@@ -13,8 +13,11 @@ namespace AliceInCradleOverpowered
             NoConsumeFood,
             PermanentThrowable,
             SortedReelContent,
+            AutoBestReel,
             NoMosaic,
             SuppressErrorLog;
+        public static ConfigEntry<CfgAutoLuckyBag>
+            AutoBestReel_Lucky;
 
         public static void Init(ConfigFile config)
         {
@@ -29,6 +32,8 @@ namespace AliceInCradleOverpowered
             PermanentThrowable = config.Bind("Item", "PermanentThrowable", true, "Throwables won't be consumed on use");
             // Item/Reel
             SortedReelContent = config.Bind("Item/Reel", "SortedReelContent", true, "Force-sort reel content by effect type + intensity (weak -> strong)");
+            AutoBestReel = config.Bind("Item/Reel", "AutoBestReel", true, "Auto-select the strongest effect on bonus reel stop (excludes lucky bag/item reels)");
+            AutoBestReel_Lucky = config.Bind("Item/Reel", "AutoBestReel_Lucky", CfgAutoLuckyBag.Mult, "Auto-select the best effect for lucky bag reels");
             // Display
             NoMosaic = config.Bind("Display", "NoMosaic", true, "Disable dynamic mosaic");
             SuppressErrorLog = config.Bind("Display", "SuppressErrorLog", true, "Disable dynamic mosaic");
