@@ -1,5 +1,6 @@
 // 生成于 GLM-5V-Turbo
 using System;
+using System.Collections.Generic;
 using HarmonyLib;
 using nel;
 using XX;
@@ -9,14 +10,15 @@ namespace AliceInCradleOverpowered.Patches
     [HarmonyPatch]
     public static class ReelTweaks
     {
-        [HarmonyPostfix, HarmonyPatch(typeof(ReelExecuter), "initReelContent")]
-        public static void SortContent(ReelExecuter __instance)
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ReelManager.EFReel), MethodType.Constructor)]
+        [HarmonyPatch(new Type[] { typeof(List<string>), typeof(int) })]
+        public static void SortEffectList(ReelManager.EFReel __instance)
         {
             if (!ModConfig.SortedReelContent.Value) return;
-            var content = __instance.Acontent;
-            if (content == null || content.Length <= 1) return;
-            if (__instance.etype == ReelExecuter.ETYPE.ITEMKIND) return;
-            Array.Sort(content);
+            var effect = __instance.Aeffect;
+            if (effect == null || effect.Length <= 1) return;
+            Array.Sort(effect);
         }
     }
 }
