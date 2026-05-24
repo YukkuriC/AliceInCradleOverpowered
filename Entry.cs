@@ -1,5 +1,6 @@
 using BepInEx;
 using HarmonyLib;
+using System;
 
 namespace AliceInCradleOverpowered
 {
@@ -24,8 +25,21 @@ namespace AliceInCradleOverpowered
             ModConfig.Init(Config);
 
             patcher = new Harmony(UID);
-            // HarmonyFileLog.Enabled = true;
-            patcher.PatchAll();
+            // 生成于 GLM-5V-Turbo
+            try
+            {
+                patcher.PatchAll();
+                Logger.LogInfo("PatchAll completed successfully");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"PatchAll failed: {ex}");
+                while (ex.InnerException != null)
+                {
+                    ex = ex.InnerException;
+                    Logger.LogError($"Inner exception: {ex}");
+                }
+            }
         }
     }
 }
