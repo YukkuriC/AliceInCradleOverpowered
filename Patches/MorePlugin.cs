@@ -1,7 +1,6 @@
-// 生成于 Claude Opus 4.6
+// 生成于 GLM-5V-Turbo
 using HarmonyLib;
 using nel;
-using System.Diagnostics;
 
 namespace AliceInCradleOverpowered.Patches
 {
@@ -16,8 +15,7 @@ namespace AliceInCradleOverpowered.Patches
             if (!ModConfig.MorePlugins.Value || Data == null) return;
             if (_slotItem == null) _slotItem = NelItem.GetById("enhancer_slot", false);
             if (Data != _slotItem) return;
-            var caller = new StackFrame(2, false).GetMethod()?.Name ?? "";
-            if (caller != "fineEnhancerStorage") return;
+            if (!Helpers.IsCalledBy("fineEnhancerStorage")) return;
             __result += 100;
         }
     }

@@ -73,6 +73,7 @@
       <DependentUpon>ModConfigGen.tt</DependentUpon>
     </Compile>
     <Compile Include="Entry.cs" />
+    <Compile Include="Helpers.cs" />
     <Compile Include="Patches\MoreTreasureRewards.cs" />
     <Compile Include="Patches\ReelTweaks.cs" />
     <Compile Include="Patches\SuperWaterShard.cs" />
