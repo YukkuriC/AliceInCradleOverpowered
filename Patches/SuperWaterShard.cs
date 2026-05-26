@@ -73,7 +73,7 @@ namespace AliceInCradleOverpowered.Patches
         }
 
         [HarmonyPostfix, HarmonyPatch(typeof(MgWaterShard), "run")]
-        static void SpawnFireballOnHit(MagicItem Mg, float fcnt, bool __result)
+        static void SpawnFireballOnHit(MagicItem Mg, bool __result)
         {
             if (__result) return;
             if (!ModConfig.WaterShardExplosive.Value) return;
