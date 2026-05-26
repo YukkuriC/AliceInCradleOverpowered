@@ -12,11 +12,17 @@ namespace AliceInCradleOverpowered.Patches
     [HarmonyPatch]
     public static class InventoryTweaks
     {
+        static readonly HashSet<string> StackBlacklist = new HashSet<string>
+        {
+            "mtr_bottle0",
+        };
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(ItemStorage), "getItemStockable")]
-        public static void Postfix_AmplifyStackSize(ref int __result)
+        public static void Postfix_AmplifyStackSize(NelItem Itm, ref int __result)
         {
             if (ModConfig.MaxStackMult.Value <= 1) return;
+            if (Itm != null && StackBlacklist.Contains(Itm.key)) return;
             __result *= ModConfig.MaxStackMult.Value;
         }
 
