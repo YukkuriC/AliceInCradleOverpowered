@@ -11,6 +11,7 @@ namespace AliceInCradleOverpowered
             WaterShardExplosive,
             MorePlugins,
             NoConsumeFood,
+            PermanentFoodBuff,
             PermanentThrowable,
             SortedReelContent,
             AutoBestReel,
@@ -32,6 +33,7 @@ namespace AliceInCradleOverpowered
             MorePlugins = config.Bind("Combat/Plugin", "MorePlugins", true, "Force-added more slots to equip more plugins");
             // Item
             NoConsumeFood = config.Bind("Item", "NoConsumeFood", true, "Food won't be consumed on use");
+            PermanentFoodBuff = config.Bind("Item", "PermanentFoodBuff", true, "Food hunger bar won't decrease");
             PermanentThrowable = config.Bind("Item", "PermanentThrowable", true, "Throwables won't be consumed on use");
             MaxStackMult = config.Bind("Item", "MaxStackMult", 10, "Multiplier for all item max stack sizes in inventory");
             // Item/Reel

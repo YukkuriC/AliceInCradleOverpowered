@@ -20,5 +20,13 @@ namespace AliceInCradleOverpowered.Patches
         {
             return generalCanceller(ref __result, false);
         }
+
+        [HarmonyPrefix, HarmonyPatch(typeof(Stomach), "progress")]
+        public static bool NoBattleHungerDrain(float lvl_cost, bool fine_pr_state, bool announce, bool only_water, float katayori01, ref float __result)
+        {
+            if (!ModConfig.PermanentFoodBuff.Value || only_water) return true;
+            __result = 0f;
+            return false;
+        }
     }
 }

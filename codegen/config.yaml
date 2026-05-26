@@ -23,6 +23,11 @@
   default: true
   category: Item
   descrip: Food won't be consumed on use
+- name: PermanentFoodBuff
+  type: bool
+  default: true
+  category: Item
+  descrip: Food hunger bar won't decrease
 - name: PermanentThrowable
   type: bool
   default: true
