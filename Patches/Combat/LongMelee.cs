@@ -1,7 +1,8 @@
-﻿using HarmonyLib;
+// 生成于 GLM-5V-Turbo
+using HarmonyLib;
 using nel;
 
-namespace AliceInCradleOverpowered.Patches
+namespace AliceInCradleOverpowered.Patches.Combat
 {
     [HarmonyPatch(typeof(PrCaneEquip), nameof(PrCaneEquip.reach_ratio))]
     public class LongMelee

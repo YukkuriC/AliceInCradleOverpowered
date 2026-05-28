@@ -74,16 +74,16 @@
     </Compile>
     <Compile Include="Entry.cs" />
     <Compile Include="Helpers.cs" />
-    <Compile Include="Patches\MoreTreasureRewards.cs" />
-    <Compile Include="Patches\ReelTweaks.cs" />
-    <Compile Include="Patches\SuperWaterShard.cs" />
-    <Compile Include="Patches\InventoryTweaks.cs" />
-    <Compile Include="Patches\LongMelee.cs" />
-    <Compile Include="Patches\NoMosaic.cs" />
-    <Compile Include="Patches\PermanentFood.cs" />
-    <Compile Include="Patches\PermanentConsumable.cs" />
-    <Compile Include="Patches\SuppressErrorReporter.cs" />
-    <Compile Include="Patches\MorePlugin.cs" />
+    <Compile Include="Patches\Combat\LongMelee.cs" />
+    <Compile Include="Patches\Combat\SuperWaterShard.cs" />
+    <Compile Include="Patches\Combat\Plugin\MorePlugin.cs" />
+    <Compile Include="Patches\Item\InventoryTweaks.cs" />
+    <Compile Include="Patches\Item\PermanentConsumable.cs" />
+    <Compile Include="Patches\Item\PermanentFood.cs" />
+    <Compile Include="Patches\Item\Reel\ReelTweaks.cs" />
+    <Compile Include="Patches\Item\Reel\MoreTreasureRewards.cs" />
+    <Compile Include="Patches\Display\NoMosaic.cs" />
+    <Compile Include="Patches\Display\SuppressErrorReporter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

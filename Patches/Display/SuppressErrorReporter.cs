@@ -2,7 +2,7 @@
 using HarmonyLib;
 using XX;
 
-namespace AliceInCradleOverpowered.Patches
+namespace AliceInCradleOverpowered.Patches.Display
 {
     [HarmonyPatch(typeof(Logger), "InitLogger")]
     public static class SuppressErrorReporter

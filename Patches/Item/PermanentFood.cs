@@ -1,8 +1,8 @@
-﻿// 生成于 GLM-5V-Turbo
+// 生成于 GLM-5V-Turbo
 using HarmonyLib;
 using nel;
 
-namespace AliceInCradleOverpowered.Patches
+namespace AliceInCradleOverpowered.Patches.Item
 {
     [HarmonyPatch]
     public static class PermanentFood

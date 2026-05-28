@@ -2,7 +2,7 @@
 using HarmonyLib;
 using nel;
 
-namespace AliceInCradleOverpowered.Patches
+namespace AliceInCradleOverpowered.Patches.Combat.Plugin
 {
     [HarmonyPatch]
     public static class MorePlugin

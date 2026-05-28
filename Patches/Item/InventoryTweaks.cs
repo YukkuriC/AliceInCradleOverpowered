@@ -7,7 +7,7 @@ using HarmonyLib;
 using nel;
 using XX;
 
-namespace AliceInCradleOverpowered.Patches
+namespace AliceInCradleOverpowered.Patches.Item
 {
     [HarmonyPatch]
     public static class InventoryTweaks

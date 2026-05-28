@@ -1,7 +1,7 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using nel;
 
-namespace AliceInCradleOverpowered.Patches
+namespace AliceInCradleOverpowered.Patches.Display
 {
     [HarmonyPatch(typeof(MosaicShower), "FnDrawMosaic")]
     public class NoMosaic

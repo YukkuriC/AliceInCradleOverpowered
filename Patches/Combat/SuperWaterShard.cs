@@ -4,7 +4,7 @@ using m2d;
 using nel;
 using XX;
 
-namespace AliceInCradleOverpowered.Patches
+namespace AliceInCradleOverpowered.Patches.Combat
 {
     [HarmonyPatch]
     public static class SuperWaterShard
