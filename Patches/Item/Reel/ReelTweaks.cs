@@ -90,25 +90,14 @@ namespace AliceInCradleOverpowered.Patches.Item.Reel
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(ReelManager), "obtainReels")]
+        [HarmonyPatch(typeof(ReelManager), "obtain")]
         public static void Postfix_ObtainReels(ReelManager __instance)
         {
             if (!ModConfig.IncReelsFirst.Value) return;
-            MoveAddingReelsToFront(__instance.AEf);
-        }
-
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(ReelManager), "obtain")]
-        public static void Postfix_Obtain(ReelManager __instance, ReelExecuter.ETYPE type)
-        {
-            if (!ModConfig.IncReelsFirst.Value) return;
-            if (!IsIncType(type)) return;
-            var list = __instance.AEf;
-            if (list.Count <= 1) return;
-            var lastReel = list[list.Count - 1];
-            if (lastReel.etype != type) return;
-            list.RemoveAt(list.Count - 1);
-            int insertIdx = list.TakeWhile(r => IsIncType(r.etype)).Count();
-            list.Insert(insertIdx, lastReel);
+            if (__instance.AEf is not { Count: > 1 } reels) return;
+            var sorted = reels.OrderBy(r => !IsIncType(r.etype)).ToList();
+            reels.Clear();
+            reels.AddRange(sorted);
         }
 
         static bool IsIncType(ReelExecuter.ETYPE etype)
@@ -116,14 +105,6 @@ namespace AliceInCradleOverpowered.Patches.Item.Reel
             return etype == ReelExecuter.ETYPE.COUNT_ADD1
                 || etype == ReelExecuter.ETYPE.COUNT_ADD2
                 || etype == ReelExecuter.ETYPE.COUNT_ADD3;
-        }
-
-        static void MoveAddingReelsToFront(List<ReelExecuter> reels)
-        {
-            if (reels == null || reels.Count <= 1) return;
-            var sorted = reels.OrderBy(r => !IsIncType(r.etype)).ToList();
-            reels.Clear();
-            reels.AddRange(sorted);
         }
     }
 }
