@@ -15,6 +15,7 @@ namespace AliceInCradleOverpowered
             PermanentThrowable,
             SortedReelContent,
             AutoBestReel,
+            IncReelsFirst,
             NoMosaic,
             SuppressStartupErrorLogHint,
             EnableHarmonyLogs;
@@ -42,6 +43,7 @@ namespace AliceInCradleOverpowered
             SortedReelContent = config.Bind("Item/Reel", "SortedReelContent", true, "Force-sort reel content by effect type + intensity (weak -> strong)");
             AutoBestReel = config.Bind("Item/Reel", "AutoBestReel", true, "Auto-select the strongest effect on bonus reel stop (excludes lucky bag/item reels)");
             AutoBestReel_Lucky = config.Bind("Item/Reel", "AutoBestReel_Lucky", CfgAutoLuckyBag.Mult, "Auto-select the best effect for lucky bag reels");
+            IncReelsFirst = config.Bind("Item/Reel", "IncReelsFirst", true, "Move quantity-increase reels to the front of the list (applies on load and when adding new reels)");
             // Display
             NoMosaic = config.Bind("Display", "NoMosaic", true, "Disable dynamic mosaic");
             SuppressStartupErrorLogHint = config.Bind("Display", "SuppressStartupErrorLogHint", true, "Disable error log detection window on startup");

@@ -58,6 +58,11 @@
   default: CfgAutoLuckyBag.Mult
   category: Item/Reel
   descrip: Auto-select the best effect for lucky bag reels
+- name: IncReelsFirst
+  type: bool
+  default: true
+  category: Item/Reel
+  descrip: Move quantity-increase reels to the front of the list (applies on load and when adding new reels)
 - name: NoMosaic
   type: bool
   default: true

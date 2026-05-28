@@ -1,6 +1,7 @@
 // 生成于 GLM-5V-Turbo
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HarmonyLib;
 using nel;
 using XX;
@@ -85,6 +86,43 @@ namespace AliceInCradleOverpowered.Patches
                 }
                 __instance.decide_delay = (id + 1 >= __instance.AReel.Count) ? 24f : 6f;
             }
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ReelManager), "obtainReels")]
+        public static void Postfix_ObtainReels(ReelManager __instance)
+        {
+            if (!ModConfig.IncReelsFirst.Value) return;
+            MoveAddingReelsToFront(__instance.AEf);
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ReelManager), "obtain")]
+        public static void Postfix_Obtain(ReelManager __instance, ReelExecuter.ETYPE type)
+        {
+            if (!ModConfig.IncReelsFirst.Value) return;
+            if (!IsIncType(type)) return;
+            var list = __instance.AEf;
+            if (list.Count <= 1) return;
+            var lastReel = list[list.Count - 1];
+            if (lastReel.etype != type) return;
+            list.RemoveAt(list.Count - 1);
+            int insertIdx = list.TakeWhile(r => IsIncType(r.etype)).Count();
+            list.Insert(insertIdx, lastReel);
+        }
+
+        static bool IsIncType(ReelExecuter.ETYPE etype)
+        {
+            return etype == ReelExecuter.ETYPE.COUNT_MUL1
+                || (etype >= ReelExecuter.ETYPE.COUNT_ADD1 && etype <= ReelExecuter.ETYPE.COUNT_ADD3);
+        }
+
+        static void MoveAddingReelsToFront(List<ReelExecuter> reels)
+        {
+            if (reels == null || reels.Count <= 1) return;
+            var sorted = reels.OrderBy(r => !IsIncType(r.etype)).ToList();
+            reels.Clear();
+            reels.AddRange(sorted);
         }
     }
 }

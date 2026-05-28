@@ -109,5 +109,6 @@
     <Publicize Include="Assembly-CSharp:nel.UiReelManager.AReel" />
     <Publicize Include="Assembly-CSharp:nel.UiReelManager.ReelIK" />
     <Publicize Include="Assembly-CSharp:nel.UiReelManager.Snd" />
+    <Publicize Include="Assembly-CSharp:nel.ReelManager.AEf" />
   </ItemGroup>
 </Project>
