@@ -17,10 +17,11 @@ An overpowered mod for AliceInCradle game.
   - Extend melee attack range (`MeleeRangeRatio`)
   - Auto supply water shards during combat (`WaterShardShield`)
   - Water shards explode like fireballs on hit (`WaterShardExplosive`)
-  - **Plugin**
-    - Force-added more slots to equip more plugins (`MorePlugins`)
+  - **Enhancer**
+    - Force-added more slots to equip more enhancers (`MoreEnhancers`)
 - **Item**
   - Food won't be consumed on use (`NoConsumeFood`)
+  - Food hunger bar won't decrease (`PermanentFoodBuff`)
   - Throwables won't be consumed on use (`PermanentThrowable`)
   - Amplify item max stack sizes in inventory (`MaxStackMult`)
   - **Reel**
@@ -28,9 +29,11 @@ An overpowered mod for AliceInCradle game.
     - Auto-select the strongest effect on bonus reel stop; excludes lucky bag/item reels (`AutoBestReel`)
     - Auto-select the best effect for lucky bag reels (`AutoBestReel_Lucky`)
     - Increase treasure chest reward limit (original cap: 99) (`MaxTreasureRewards`)
+    - Move quantity-increase reels to front of list (`IncReelsFirst`)
 - **Display**
   - Disable dynamic mosaic (`NoMosaic`)
-  - Suppress startup error log detection (`SuppressErrorLog`)
+  - Suppress startup error log detection (`SuppressStartupErrorLogHint`)
+  - Enable Harmony file log output to game root directory (`EnableHarmonyLogs`)
 
 ## Deployment
 

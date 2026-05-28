@@ -18,9 +18,10 @@ AliceInCradle 游戏的强化模组。
   - 战斗中自动补充水之碎片（`WaterShardShield`）
   - 命中时水之碎片像火球一样爆裂（`WaterShardExplosive`）
   - **插件**
-    - 强制增加更多插件/装备槽位（`MorePlugins`）
+    - 强制增加更多插件/装备槽位（`MoreEnhancers`）
 - **物品**
   - 使用食物不会消耗（`NoConsumeFood`）
+  - 食物饥饿条不会减少（`PermanentFoodBuff`）
   - 使用投掷物不会消耗（`PermanentThrowable`）
   - 放大背包中物品的最大堆叠数量（`MaxStackMult`）
   - **轮盘**
@@ -28,9 +29,11 @@ AliceInCradle 游戏的强化模组。
     - 奖励轮盘停止时自动选择最强效果，不含福袋/物品轮盘（`AutoBestReel`）
     - 福袋轮盘自动选择最优效果（`AutoBestReel_Lucky`）
     - 提升宝箱奖励数量上限（原版上限：99）（`MaxTreasureRewards`）
+    - 将数量增加轮盘移到列表前面（`IncReelsFirst`）
 - **显示**
   - 移除动态马赛克（`NoMosaic`）
-  - 抑制启动时错误日志检测（`SuppressErrorLog`）
+  - 抑制启动时错误日志检测（`SuppressStartupErrorLogHint`）
+  - 启用Harmony文件日志输出到游戏根目录（`EnableHarmonyLogs`）
 
 ## 部署
 
