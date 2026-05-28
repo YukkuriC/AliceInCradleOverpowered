@@ -113,8 +113,9 @@ namespace AliceInCradleOverpowered.Patches.Item.Reel
 
         static bool IsIncType(ReelExecuter.ETYPE etype)
         {
-            return etype == ReelExecuter.ETYPE.COUNT_MUL1
-                || (etype >= ReelExecuter.ETYPE.COUNT_ADD1 && etype <= ReelExecuter.ETYPE.COUNT_ADD3);
+            return etype == ReelExecuter.ETYPE.COUNT_ADD1
+                || etype == ReelExecuter.ETYPE.COUNT_ADD2
+                || etype == ReelExecuter.ETYPE.COUNT_ADD3;
         }
 
         static void MoveAddingReelsToFront(List<ReelExecuter> reels)
