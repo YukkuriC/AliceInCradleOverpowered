@@ -13,11 +13,11 @@
   default: true
   category: Combat
   descrip: Water shards explode like fireballs on hit
-- name: MorePlugins
+- name: MoreEnhancers
   type: bool
   default: true
-  category: Combat/Plugin
-  descrip: Force-added more slots to equip more plugins
+  category: Combat/Enhancer
+  descrip: Force-added more slots to equip more enhancers
 - name: NoConsumeFood
   type: bool
   default: true

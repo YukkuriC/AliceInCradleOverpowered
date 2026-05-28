@@ -9,7 +9,7 @@ namespace AliceInCradleOverpowered
         public static ConfigEntry<bool>
             WaterShardShield,
             WaterShardExplosive,
-            MorePlugins,
+            MoreEnhancers,
             NoConsumeFood,
             PermanentFoodBuff,
             PermanentThrowable,
@@ -31,8 +31,8 @@ namespace AliceInCradleOverpowered
             MeleeRangeRatio = config.Bind("Combat", "MeleeRangeRatio", 1f, "Melee attack horizontal ranges will be multiplied by this value");
             WaterShardShield = config.Bind("Combat", "WaterShardShield", true, "Auto supply water shards during combat");
             WaterShardExplosive = config.Bind("Combat", "WaterShardExplosive", true, "Water shards explode like fireballs on hit");
-            // Combat/Plugin
-            MorePlugins = config.Bind("Combat/Plugin", "MorePlugins", true, "Force-added more slots to equip more plugins");
+            // Combat/Enhancer
+            MoreEnhancers = config.Bind("Combat/Enhancer", "MoreEnhancers", true, "Force-added more slots to equip more enhancers");
             // Item
             NoConsumeFood = config.Bind("Item", "NoConsumeFood", true, "Food won't be consumed on use");
             PermanentFoodBuff = config.Bind("Item", "PermanentFoodBuff", true, "Food hunger bar won't decrease");

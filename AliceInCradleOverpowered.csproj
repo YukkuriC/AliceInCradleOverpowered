@@ -76,7 +76,7 @@
     <Compile Include="Helpers.cs" />
     <Compile Include="Patches\Combat\LongMelee.cs" />
     <Compile Include="Patches\Combat\SuperWaterShard.cs" />
-    <Compile Include="Patches\Combat\Plugin\MorePlugin.cs" />
+    <Compile Include="Patches\Combat\Enhancer\MoreEnhancers.cs" />
     <Compile Include="Patches\Item\InventoryTweaks.cs" />
     <Compile Include="Patches\Item\PermanentConsumable.cs" />
     <Compile Include="Patches\Item\PermanentFood.cs" />
