@@ -1,6 +1,7 @@
 using BepInEx;
 using HarmonyLib;
 using System;
+using HarmonyLib.Tools;
 
 namespace AliceInCradleOverpowered
 {
@@ -23,6 +24,13 @@ namespace AliceInCradleOverpowered
         {
             // configs MUST be initialized before PatchAll so Transpilers can read them
             ModConfig.Init(Config);
+
+            if (ModConfig.EnableHarmonyLogs.Value)
+            {
+                HarmonyFileLog.Enabled = true;
+                HarmonyLib.Tools.Logger.ChannelFilter = HarmonyLib.Tools.Logger.LogChannel.All;
+                HarmonyFileLog.FileWriterPath = Paths.GameRootPath;
+            }
 
             patcher = new Harmony(UID);
             // 生成于 GLM-5V-Turbo

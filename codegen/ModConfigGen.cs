@@ -16,7 +16,8 @@ namespace AliceInCradleOverpowered
             SortedReelContent,
             AutoBestReel,
             NoMosaic,
-            SuppressErrorLog;
+            SuppressStartupErrorLogHint,
+            EnableHarmonyLogs;
         public static ConfigEntry<int>
             MaxStackMult,
             MaxTreasureRewards;
@@ -43,7 +44,8 @@ namespace AliceInCradleOverpowered
             AutoBestReel_Lucky = config.Bind("Item/Reel", "AutoBestReel_Lucky", CfgAutoLuckyBag.Mult, "Auto-select the best effect for lucky bag reels");
             // Display
             NoMosaic = config.Bind("Display", "NoMosaic", true, "Disable dynamic mosaic");
-            SuppressErrorLog = config.Bind("Display", "SuppressErrorLog", true, "Disable dynamic mosaic");
+            SuppressStartupErrorLogHint = config.Bind("Display", "SuppressStartupErrorLogHint", true, "Disable error log detection window on startup");
+            EnableHarmonyLogs = config.Bind("Display", "EnableHarmonyLogs", false, "Enable Harmony file log output to game root directory");
         }
     }
 }

@@ -63,8 +63,13 @@
   default: true
   category: Display
   descrip: Disable dynamic mosaic
-- name: SuppressErrorLog
+- name: SuppressStartupErrorLogHint
   type: bool
   default: true
   category: Display
-  descrip: Disable dynamic mosaic
+  descrip: Disable error log detection window on startup
+- name: EnableHarmonyLogs
+  type: bool
+  default: false
+  category: Display
+  descrip: Enable Harmony file log output to game root directory

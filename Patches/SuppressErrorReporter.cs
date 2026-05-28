@@ -9,7 +9,7 @@ namespace AliceInCradleOverpowered.Patches
     {
         public static void Postfix()
         {
-            if (!ModConfig.SuppressErrorLog.Value) return;
+            if (!ModConfig.SuppressStartupErrorLogHint.Value) return;
             Logger.error_occur_path = null;
             Logger.loaded_file_error_flag = Logger.ERRORFLAG.NONE;
         }
